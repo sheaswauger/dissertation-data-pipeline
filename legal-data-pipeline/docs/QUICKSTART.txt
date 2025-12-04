@@ -1,0 +1,41 @@
+# Quick Start Guide
+
+## Setup (do this once)
+
+```bash
+./setup.sh
+```
+
+## Run (every time)
+
+```bash
+./run.sh
+```
+
+That's it! The script will ask you for:
+- Your LegiScan API key
+- Path to keywords file (try `keywords_example.txt` first)
+- Starting year (e.g., 2020) - will search from that year to present
+
+Results will be in the `output/` folder.
+
+## File Structure
+
+```
+shea/
+├── run.sh                    # Run this to search for bills
+├── setup.sh                  # Run this once for setup
+├── legiscan_search.py        # Main Python script (don't run directly)
+├── keywords_example.txt      # Sample keywords file
+├── venv/                     # Virtual environment (created by setup.sh)
+└── output/                   # Results go here (created automatically)
+    ├── bill_search_results_*.csv
+    └── bill_texts/
+        ├── CA_AB123.html
+        ├── TX_HB456.html
+        └── ...
+```
+
+## Need Help?
+
+See README.md for full documentation.

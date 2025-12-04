@@ -1,0 +1,73 @@
+ Clarifying Questions
+
+  1. Environment & Language
+  - Continue using Python 3 with the existing codebase?
+	-yes, but we may need to install some libraries along the way. 
+  - Running locally on your Mac, or will this run on a server?
+	-locally
+  - OK to add dependencies (python-dotenv for .env support, maybe pandas for data handling)?
+	-yes
+
+  2. API Key & Configuration
+  - How do you currently store your LegiScan API key? Should I create a .env file with .env.example template?
+	-yes, create it. 
+  - Do you want the script to read from environment variables, or keep the interactive prompt?
+	-what's the best practice here?
+
+  3. Rate Limits & Runtime
+  - Do you know LegiScan's rate limits? (Otherwise I'll use conservative defaults: 0.5-1s delays between requests)
+	-check the API documentation in the file, but I think it's 30,000 per month. 
+  - The bulk dataset approach already has 963 sessions cached - should we use those to minimize API calls?
+	-i think so, but I'm open to your reccomendation. 
+  - For a full 50-state pull from earliest year (likely 2010) to 2025, are you OK with long runtimes (potentially hours)?
+	-yes
+  - Should the script support resumable/chunked runs (e.g., run per state, or per year)?
+	-yes it that is helpful or makes it more manageable
+
+  4. Output & Storage
+  - Current format is CSV - keep this, or also support JSONL/Parquet/SQLite?
+	-CSV
+  - Should I store:
+    - Raw API responses (for reproducibility/debugging)?
+    - Cleaned tabular data only (current approach)?
+    	-both please
+
+  5. Topic Filtering
+  - Confirm input.txt is the authoritative keyword list (no additions needed)?
+	start with those and we can add later if we need. 
+  - Current scripts match keywords in title/description/history - NOT full bill text. Is this acceptable, or should I add full-text
+  search?
+	-full bill text search 
+  - The keyword "school + firearm" has special syntax - should I treat this as literal "school + firearm" or as boolean "school AND
+  firearm"?
+	-this was intended to be boolean, but only use that if that is a function that works. 
+  - Current approach is OR logic (any keyword matches) - keep this?
+	-yes, keep OR logic
+
+  6. Status Filtering (CRITICAL)
+  - You want "passed / enrolled / enacted (final statuses)" - which specific LegiScan status codes?
+    - Status 3 = Enrolled <- Yes
+    - Status 4 = Passed <- Yes
+    - Event 8 = Chaptered (enacted) <- Yes
+    - Include Status 5 = Vetoed (final but not enacted)? <- No
+    - Include Status 6 = Failed (final but not enacted)? <- No
+  - Should I filter for "became law" only, or all final legislative actions?
+	- all final legislative actions
+
+  7. Year Range
+  - "2025 back to the earliest available year" - LegiScan has reliable data from ~2010. Is 2010-2025 acceptable?
+	-yes
+  - Or should I try to pull older data (may be incomplete)?
+	-no
+
+  8. Operational Preferences
+  - Logging: Console output + log file, or console only?
+	-log file, create a new folder to put them into
+  - Error handling: Skip failed bills/sessions and continue, or halt on errors?
+	-skip and continue but report all skipped or failed bills into a new text document you create where all skipped or failed bills are tracked
+  - Idempotency: If re-run, should it skip already-downloaded bills, or re-pull everything?
+	-skill already downloaded bills
+
+additionally, i want to end up with the full text of all the bills broken up into seperate files. What's the best way to achieive this? Download the PDFs and run a script? something else?
+
+before you run these. reccomend any methods that could improve the project's accuracy or completeness. Additionally, reccomend any ways we can optomize effeciency to reduce API calls and reduce the use of tokens. ask me any follow up questions for clarity. 

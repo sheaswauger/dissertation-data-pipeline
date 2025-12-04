@@ -1,0 +1,39 @@
+Write: legiscan_enricher.py
+
+Fill missing data in ~/Desktop/Legiscan Data/legiscan_combined.csv
+
+SETUP
+- API keys: ~/Desktop/Legiscan Data/API keys.txt
+- Check existing API scripts in folder for reference
+- Libraries: pandas, requests
+
+TASK
+Fill missing fields (Title, URLs, Status, Last Action Date) for ~393 rows
+
+API PRIORITY
+1. LegiScan API (primary)
+2. Open States API (fallback) - docs: https://docs.openstates.org/api-v3/
+3. Mark as "No information found" if both fail
+
+LOGIC
+- Skip rows with complete data
+- Extract State + Bill Number → query APIs
+- Map API responses to schema columns
+- Rate limit: ~30k/month (add delay if needed)
+- Cache API responses to avoid duplicate calls
+- Log: API used, success/failure per row
+
+OUTPUT
+- legiscan_enriched.csv
+- legiscan_enriched.xlsx
+- Same 8-column schema
+- Progress log showing filled vs. unfilled
+
+STRUCTURE
+Functions: load_data(), load_api_keys(), query_legiscan(), query_openstates(), enrich_row(), save_output(), main()
+
+EXECUTION
+- Add --limit flag to test on first N rows
+- Show progress bar for API calls
+- Handle API errors gracefully
+- Print summary: X rows filled, Y still missing

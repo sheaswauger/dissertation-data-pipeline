@@ -1,0 +1,64 @@
+Reproducibility Guide: School Safety Legislation Study
+Original Data Collection Parameters
+Search Scope:
+	•States: All 50 US states
+	•Date Range: 2010-01-01 to 2025-12-31
+        	-This is due to when Legiscan starts to have reliable data 
+	•Search Terms:
+		◦school shooting
+		◦school safety
+		◦school lockdown
+		◦school emergency
+Search Method: Bulk Dataset API (recommended for multi-year searches)
+Essential Files Checklist
+Required for Reproduction:
+	•src/legiscan_collector.py - Raw data collection
+	•src/legiscan_api.py - API wrapper
+	•legiscan_search.py - Search functionality
+	•legiscan_bulk.py - Bulk operations
+	•legiscan_enricher.py - Data enrichment
+	•Legiscan/legiscan_normalizer.py - Data normalization
+	•src/utils.py - Utilities
+	•src/text_processor.py - Text processing
+	•requirements.txt - Dependencies
+	•API_keys.txt.template - API key template
+	•prompt_2.txt - Enrichment specifications
+Configuration:
+Create API_keys.txt with:
+
+LEGISCAN_API_KEY=your_key_here
+OPENSTATES_API_KEY=your_key_here
+Reproduction Workflow
+
+bash
+# 1. Setup environment
+./setup.sh
+
+# 2. Add API keys to API_keys.txt
+
+# 3. Run data collection with parameters above
+./run.sh
+# When prompted:
+# - Enter API key
+# - Create keywords file with search terms
+# - Enter 2010 as starting year
+
+# 4. Normalize data
+python Legiscan/legiscan_normalizer.py
+
+# 5. Enrich data
+python legiscan_enricher.py
+```
+
+## Output Files (Generated)
+- `legiscan_combined.csv` - Normalized raw data
+- `legiscan_enriched.csv/xlsx` - Final dataset with enriched metadata
+
+## Keywords File Template
+
+Create `keywords_school_safety.txt`:
+```
+school shooting
+school safety
+school lockdown
+school emergency
