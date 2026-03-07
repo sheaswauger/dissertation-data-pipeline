@@ -1,0 +1,21 @@
+name: dissertation
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pandas
+  - requests
+  - pydantic
+  - python-dotenv
+  - tqdm
+  - sqlalchemy
+  - spacy
+  - scikit-learn
+  - pip
+  - pip:
+    - sqlite-utils
+    - black
+    - flake8
+    - pytest
+    - pytest-cov

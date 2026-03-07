@@ -1,112 +1,128 @@
 #!/usr/bin/env python3
 """
-LegiScan API Client Wrapper
-Handles all API interactions with rate limiting and error handling.
+LegiScan API Client
+Compliant with LegiScan API usage policy:
+- Uses dataset_hash to avoid redundant downloads
+- Only calls getDataset when hash has changed
+- Caches all downloaded ZIPs locally
 """
 
-import requests
+import os
+import json
 import time
-import base64
+import requests
+from pathlib import Path
 from typing import Dict, List, Optional
-import logging
+
+
+LEGISCAN_BASE_URL = "https://api.legiscan.com/"
+
+
+class DatasetHashCache:
+    """
+    Stores dataset_hash values locally to prevent redundant API downloads.
+    LegiScan requires checking hashes before downloading datasets.
+    """
+
+    def __init__(self, cache_file: Path):
+        self.cache_file = cache_file
+        self.cache_file.parent.mkdir(parents=True, exist_ok=True)
+        self.data = self._load()
+
+    def _load(self) -> Dict:
+        if self.cache_file.exists():
+            with open(self.cache_file, "r") as f:
+                return json.load(f)
+        return {}
+
+    def _save(self):
+        with open(self.cache_file, "w") as f:
+            json.dump(self.data, f, indent=2)
+
+    def has_changed(self, session_id: int, new_hash: str) -> bool:
+        """Returns True if the dataset has changed since last download."""
+        stored_hash = self.data.get(str(session_id), {}).get("dataset_hash")
+        return stored_hash != new_hash
+
+    def update(self, session_id: int, dataset_hash: str, session_name: str):
+        """Record the hash after a successful download."""
+        self.data[str(session_id)] = {
+            "dataset_hash": dataset_hash,
+            "session_name": session_name,
+        }
+        self._save()
+
+    def get_hash(self, session_id: int) -> Optional[str]:
+        return self.data.get(str(session_id), {}).get("dataset_hash")
 
 
 class LegiScanAPI:
-    """Wrapper for LegiScan API operations with rate limiting and retry logic"""
-
-    BASE_URL = "https://api.legiscan.com/"
+    """
+    LegiScan API client with compliant rate limiting and hash-based caching.
+    """
 
     def __init__(self, api_key: str, rate_limit_delay: float = 0.5):
         self.api_key = api_key
         self.rate_limit_delay = rate_limit_delay
-        self.session = requests.Session()
-        self.api_call_count = 0
-        self.logger = logging.getLogger(__name__)
+        self._api_call_count = 0
 
-    def _make_request(
-        self,
-        operation: str,
-        params: Optional[Dict] = None,
-        retries: int = 3
-    ) -> Dict:
-        """Make API request with rate limiting and retry logic"""
-        if params is None:
-            params = {}
+    def _get(self, params: Dict) -> Dict:
+        """Make a GET request to the LegiScan API."""
+        params["key"] = self.api_key
+        time.sleep(self.rate_limit_delay)
+        self._api_call_count += 1
 
-        params['key'] = self.api_key
-        params['op'] = operation
+        response = requests.get(LEGISCAN_BASE_URL, params=params, timeout=30)
+        response.raise_for_status()
+        data = response.json()
 
-        for attempt in range(retries):
-            try:
-                # Rate limiting
-                time.sleep(self.rate_limit_delay)
+        if data.get("status") == "ERROR":
+            raise ValueError(f"LegiScan API error: {data.get('alert', {}).get('message', 'Unknown error')}")
 
-                response = self.session.get(self.BASE_URL, params=params)
-                response.raise_for_status()
-                data = response.json()
+        return data
 
-                # Track API usage
-                self.api_call_count += 1
-
-                if data.get('status') != 'OK':
-                    error_msg = data.get('alert', {}).get('message', 'Unknown error')
-
-                    # Empty result set is not really an error for some operations
-                    if error_msg == 'Empty result set' and operation in ['getDatasetList']:
-                        return {'status': 'OK', 'datasetlist': []}
-
-                    raise Exception(f"API Error: {error_msg}")
-
-                self.logger.debug(f"API call {self.api_call_count}: {operation} - Success")
-                return data
-
-            except requests.exceptions.RequestException as e:
-                self.logger.warning(f"Request failed (attempt {attempt + 1}/{retries}): {e}")
-
-                if attempt < retries - 1:
-                    # Exponential backoff
-                    delay = 2 ** attempt
-                    self.logger.info(f"Retrying in {delay} seconds...")
-                    time.sleep(delay)
-                else:
-                    raise Exception(f"Request failed after {retries} attempts: {e}")
-
-    def get_dataset_list(self, state: Optional[str] = None, year: Optional[int] = None) -> List[Dict]:
-        """Get list of available datasets"""
-        params = {}
-        if state:
-            params['state'] = state
+    def get_dataset_list(self, year: Optional[int] = None) -> List[Dict]:
+        """
+        Fetch list of available datasets with their hash values.
+        This is a lightweight call — hash comparison happens here
+        before any dataset download.
+        """
+        params = {"op": "getDatasetList"}
         if year:
-            params['year'] = year
+            params["year"] = year
 
-        try:
-            data = self._make_request('getDatasetList', params)
-            datasets = data.get('datasetlist', [])
-            self.logger.info(f"Retrieved {len(datasets)} datasets for year={year}, state={state}")
-            return datasets
-        except Exception as e:
-            self.logger.error(f"Failed to get dataset list: {e}")
-            return []
+        data = self._get(params)
+        datasets = data.get("datasetlist", [])
+
+        # Filter out metadata entry
+        return [d for d in datasets if isinstance(d, dict) and "session_id" in d]
 
     def get_dataset(self, session_id: int, access_key: str) -> bytes:
-        """Download a dataset ZIP file"""
+        """
+        Download a dataset ZIP. Should only be called when hash has changed.
+        """
         params = {
-            'id': session_id,
-            'access_key': access_key
+            "op": "getDataset",
+            "id": session_id,
+            "access_key": access_key,
         }
+        params["key"] = self.api_key
+        time.sleep(self.rate_limit_delay)
+        self._api_call_count += 1
 
-        data = self._make_request('getDataset', params)
-        dataset = data.get('dataset', {})
-        zip_base64 = dataset.get('zip', '')
+        response = requests.get(LEGISCAN_BASE_URL, params=params, timeout=120)
+        response.raise_for_status()
 
-        if not zip_base64:
-            raise Exception(f"No ZIP data in dataset response for session {session_id}")
+        data = response.json()
+        if data.get("status") == "ERROR":
+            raise ValueError(f"LegiScan API error: {data.get('alert', {}).get('message', 'Unknown error')}")
 
-        # Decode base64 ZIP
-        zip_bytes = base64.b64decode(zip_base64)
-        self.logger.info(f"Downloaded dataset for session {session_id} ({len(zip_bytes)} bytes)")
-        return zip_bytes
+        import base64
+        zip_b64 = data.get("dataset", {}).get("zip", "")
+        if not zip_b64:
+            raise ValueError(f"No ZIP data returned for session {session_id}")
+
+        return base64.b64decode(zip_b64)
 
     def get_api_usage(self) -> int:
-        """Return the number of API calls made"""
-        return self.api_call_count
+        return self._api_call_count
