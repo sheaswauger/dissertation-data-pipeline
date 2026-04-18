@@ -190,3 +190,19 @@ Step 3: Run a small-scale STM test (K=3-5) and report topic coherence metrics.
 If stm is not available in Python, use the R stm package via rpy2 or suggest an
 R script approach.
 ```
+
+---
+
+## Addendum — OSF Integration Setup (same day)
+
+OSF integration authenticated and write-verified 2026-04-18.
+
+- Token stored in `.env` as `OSF_TOKEN`
+- Project ID: `qx7sh` (Legislative API)
+- `osfclient` installed in `dissertation` conda env
+- `.osfcli.config` created in `data-pipeline/` (gitignored)
+- Write test successful — uploaded and confirmed via `osf upload`
+
+**Known issue:** `osf ls` errors out due to osfclient bug iterating Google Drive storage addon. Workaround: always specify `osfstorage/` prefix explicitly in commands.
+
+**Deferred:** sync script (scripts/sync_to_osf.py) — post-Tuesday session.
