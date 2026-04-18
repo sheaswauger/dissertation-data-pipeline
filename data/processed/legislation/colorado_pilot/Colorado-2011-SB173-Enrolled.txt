@@ -1,0 +1,201 @@
+SENATE BILL 11-173
+BY SENATOR(S) King S., King K., Morse, Shaffer B., Cadman, Carroll,
+Giron, Kopp, Roberts, Spence, Aguilar, Boyd, Brophy, Foster, Grantham,
+Guzman, Heath, Hodge, Hudak, Jahn, Lambert, Newell, Nicholson,
+Schwartz, Tochtrop, White, Williams S., Steadman;
+also REPRESENTATIVE(S) Gardner B. and Fields, Barker, Beezley,
+Bradford, Court, Duran, Ferrandino, Gerou, Hamner, Holbert,
+Hullinghorst, Joshi, Kefalas, Kerr A., Labuda, Looper, Massey, Miklosi,
+Pabon, Pace, Peniston, Ramirez, Schafer S., Scott, Solano, Stephens, Todd,
+Tyler, Vigil, Williams A., Wilson.
+CONCERNING INTEROPERABLE COMMUNICATIONS IN SCHOOLS.
+SECTION 1. Legislative declaration. (1) The general assembly
+hereby finds and declares that:
+(a) Statewide communications interoperability that includes all
+schools is an important law enforcement, public safety, and homeland
+security objective;
+(b) Each school day, Colorado educators and school personnel are
+accountable for the safety of over eight hundred thousand students, or about
+
+one-fifth of the total population of the state;
+(c) Educators and school personnel are often the first to detect a
+school-related threat and are the first responders in a school building, on a
+field trip, or at a school-related event. They are also often the last persons
+to leave the site of an incident and are tasked with managing the aftereffects
+of an incident.
+(d) In recognition of these realities, schools must have the safety
+plans, procedures, training, safety and communications equipment, and
+other support they need in order to effectively participate with first
+responders in a coordinated response to any school incident;
+(e) The inability of state and local public safety agencies to reliably
+communicate directly with schools creates the potential for unnecessary
+communication delays and poses a significant risk to school safety and
+homeland security;
+(f) The state has made significant progress in the construction of a
+statewide public safety tactical interoperable communications network that
+is available to school districts and in the development and deployment of
+school-based interoperable communications systems;
+(g) Colorado schools have also made significant progress in
+emergency communications by adopting the national incident management
+system (NIMS), training school staff in the incident command system (ICS),
+and conducting joint exercises involving school staff and community first
+responders in order to better coordinate their response to school incidents;
+and
+(h) Interoperable communications systems are a critical component
+of NIMS.
+(2) The general assembly therefore finds and declares that schools
+would benefit from the coordinated efforts of multiple agencies and entities,
+including the governor's office of information technology, the division of
+fire safety in the department of public safety, and the school safety resource
+center in the department of public safety, to share best practices in
+emergency communications; identify the emergency communications needs
+at the school level; help target technical assistance, grants, and other
+
+support; and prepare schools and the public safety community for
+next-generation communications technologies.
+SECTION 2. The introductory portions to 22-32-109.1 (4) and (4)
+(d) and 22-32-109.1 (4) (f), (4) (g) (II), and (4) (i), Colorado Revised
+Statutes, are amended to read:
+22-32-109.1. Board of education - specific powers and duties -
+safe schools. (4) School response framework - school safety, readiness,
+and incident management plan. Each board of education shall establish
+a school response framework that shall consist of policies described in this
+subsection (4). By satisfying the requirements of this subsection (4), a
+school or school district shall be in compliance with the national incident
+management system, referred to in this subsection (4) as "NIMS",
+developed by the federal emergency management system AGENCY. At a
+minimum, the policies shall require:
+(d) Each school district, on or before July 1, 2009, to start to develop
+in conjunction with local fire departments, local law enforcement agencies,
+local emergency medical service personnel, local mental health
+organizations, and local public health agencies, collectively referred to in
+this subsection (4) as "community partners", a school safety, readiness, and
+incident management plan, INCLUDING, TO THE EXTENT POSSIBLE,
+EMERGENCY COMMUNICATIONS, that coordinates with any statewide or local
+homeland security EMERGENCY OPERATION plans. and that, IN DEVELOPING
+THE PLAN, A SCHOOL DISTRICT MAY COLLABORATE WITH LOCAL FIRE
+DEPARTMENTS, STATE AND LOCAL LAW ENFORCEMENT AGENCIES, LOCAL 911
+AGENCIES, LOCAL EMERGENCY MEDICAL SERVICE PERSONNEL, LOCAL
+MENTAL HEALTH ORGANIZATIONS, LOCAL PUBLIC HEALTH AGENCIES, LOCAL
+EMERGENCY MANAGEMENT PERSONNEL, AND LOCAL OR REGIONAL
+HOMELAND SECURITY PERSONNEL, WHICH ENTITIES ARE COLLECTIVELY
+REFERRED TO IN THIS SUBSECTION (4) AS "COMMUNITY PARTNERS". THE
+SCHOOL SAFETY, READINESS, AND INCIDENT MANAGEMENT PLAN SHALL, at
+a minimum, identifies IDENTIFY for each public school in the school district:
+(f) To the extent possible, each public school to create an all-hazard
+exercise program based on NIMS and to conduct tabletop exercises and
+other exercises in collaboration with community partners from multiple
+disciplines and, if possible, multiple jurisdictions to practice and assess
+preparedness AND COMMUNICATIONS INTEROPERABILITY WITH COMMUNITY
+
+PARTNERS;
+(g) To the extent possible, each public school, in collaboration with
+its school district, to hold coordinated exercises among school employees
+and community partners, including at a minimum:
+(II) Drills ALL-HAZARD DRILLS, in addition to annual fire drills, to
+improve individual and student emergency procedures AND TO TEST
+COMMUNICATIONS INTEROPERABILITY; and
+(i) Each public school, at least every academic term, to inventory
+emergency equipment and review TEST communications equipment and its
+interoperability with affected state and local agencies;
+SECTION 3. Part 12 of article 33.5 of title 24, Colorado Revised
+Statutes, is amended BY THE ADDITION OF A NEW SECTION to read:
+24-33.5-1213.4. School all-hazard emergency planning and
+response. (1) THE SCHOOL RESPONSE FRAMEWORK CREATED IN SECTION
+22-32-109.1 (4), C.R.S., SETS FORTH THE FRAMEWORK FOR SCHOOL
+EMERGENCY INCIDENT RESPONSE AND EMERGENCY PREPAREDNESS,
+INCLUDING EMERGENCY COMMUNICATIONS. PURSUANT TO THE SCHOOL
+RESPONSE FRAMEWORK, EMERGENCY RESPONSE PERSONNEL ARE
+COMMUNITY PARTNERS WITH SCHOOLS. AS PART OF ITS DUTY TO
+REGULARLY INSPECT SCHOOL BUILDINGS TO ENSURE COMPLIANCE WITH THE
+FIRE CODE, THE DIVISION, LOCAL FIRE DEPARTMENTS, AND CERTIFIED FIRE
+INSPECTORS MAY PARTNER WITH SCHOOLS IN ASSESSING EACH SCHOOL'S
+IMPLEMENTATION OF NIMS AND THE INTEROPERABILITY OF THE SCHOOL'S
+EMERGENCY COMMUNICATIONS EQUIPMENT WITH STATE AND LOCAL
+EMERGENCY RESPONSE AGENCIES.
+(2) (a) AS PART OF THE DIVISION'S DUTY, AS SET FORTH IN SECTION
+24-33.5-1213, TO ENFORCE THE PROVISIONS OF SECTION 22-32-124 (2),
+C.R.S., AND SECTION 24-33.5-1213.3, THE DIVISION:
+(I) SHALL INQUIRE OF EACH SCHOOL AS TO THE NUMBER AND TYPE OF
+ANY ALL-HAZARD DRILLS CONDUCTED BY THE SCHOOL, IN ADDITION TO
+REGULAR FIRE DRILLS; AND
+(II) MAY INQUIRE CONCERNING:
+
+(A) THE SCHOOL SAFETY, READINESS, AND INCIDENT MANAGEMENT
+PLAN DEVELOPED PURSUANT TO SECTION 22-32-109.1 (4) (d), C.R.S.;
+(B) THE SCHOOL'S PROGRESS TOWARD IMPLEMENTING NIMS AND
+THE INCIDENT COMMAND SYSTEM PURSUANT TO SECTION 22-32-109.1,
+C.R.S., AND IN ACHIEVING COMMUNICATIONS INTEROPERABILITY WITH
+STATE AND LOCAL EMERGENCY PERSONNEL;
+(C) THE NATURE AND LOCATION OF THE SCHOOL'S EMERGENCY
+EQUIPMENT, INCLUDING COMMUNICATIONS EQUIPMENT, AND WHETHER THE
+COMMUNICATIONS EQUIPMENT'S INTEROPERABILITY WITH STATE AND LOCAL
+EMERGENCY PERSONNEL HAS BEEN TESTED SEPARATELY OR AS PART OF AN
+ALL-HAZARD DRILL; AND
+(D) ANY OTHER ISSUES RELATED TO THE SCHOOL RESPONSE
+FRAMEWORK, INCLUDING BUT NOT LIMITED TO NIMS IMPLEMENTATION,
+INCIDENT MANAGEMENT, AND COMMUNICATIONS INTEROPERABILITY WITH
+STATE AND LOCAL EMERGENCY PERSONNEL.
+(b) INQUIRIES MADE BY THE DIVISION PURSUANT TO PARAGRAPH (a)
+OF THIS SUBSECTION (2) THAT DO NOT RELATE TO THE FIRE CODE SHALL NOT
+BE THE BASIS FOR A NOTICE OF DEFICIENCY OR ENFORCEMENT ACTION.
+(3) (a) PURSUANT TO ITS ROLE AS A COMMUNITY PARTNER WITH
+SCHOOLS, THE DIVISION MAY, AS PART OF ITS REGULAR CORRESPONDENCE
+WITH SCHOOLS, PROVIDE INFORMATION TO SCHOOL SAFETY PERSONNEL IN
+SCHOOL DISTRICTS AND SCHOOLS, INCLUDING BUT NOT LIMITED TO
+INFORMATION RELATED TO NIMS AND INTEROPERABLE COMMUNICATIONS,
+COURSES AND TRAINING ON NIMS AND INTEROPERABLE COMMUNICATIONS,
+REPRESENTATION OF SCHOOLS AT MEETINGS HELD BY COMMUNITY
+PARTNERS, BEST PRACTICES IN INCIDENT MANAGEMENT, AND FUNDING OR
+GRANT OPPORTUNITIES RELATED TO EMERGENCY PREPAREDNESS.
+(b) THE DIVISION SHALL COLLABORATE WITH THE OFFICE OF
+INFORMATION TECHNOLOGY, CREATED IN SECTION 24-37.5-103, THE SCHOOL
+SAFETY RESOURCE CENTER CREATED IN SECTION 24-33.5-1803, AND ANY
+OTHER GOVERNMENT ENTITIES AND COMMUNITY PARTNERS AS DETERMINED
+BY THE DIVISION TO COLLECT AND DISSEMINATE INFORMATION TO SCHOOL
+DISTRICTS AND SCHOOLS AS DESCRIBED IN PARAGRAPH (a) OF THIS
+SUBSECTION (3).
+
+SECTION 4. 24-33.5-1203 (1), Colorado Revised Statutes, is
+amended BY THE ADDITION OF A NEW PARAGRAPH to read:
+24-33.5-1203. Duties of division. (1) The division shall perform
+the following duties:
+(s) PURSUANT TO SECTION 24-33.5-1213.4, ASSIST SCHOOL DISTRICTS
+AND SCHOOLS IN IMPLEMENTING THE SCHOOL RESPONSE FRAMEWORK SET
+FORTH IN SECTION 22-32-109.1 (4), C.R.S., ADVISE SCHOOL DISTRICTS AND
+SCHOOLS CONCERNING ALL-HAZARD EXERCISES AND DRILLS FOR SCHOOL
+BUILDINGS AND THE INTEROPERABILITY OF SCHOOL COMMUNICATIONS
+SYSTEMS WITH STATE AND LOCAL EMERGENCY PERSONNEL, AND, IN
+COLLABORATION WITH THE OFFICE OF INFORMATION TECHNOLOGY CREATED
+IN SECTION 24-37.5-103, THE SCHOOL SAFETY RESOURCE CENTER CREATED
+IN SECTION 24-33.5-1803, AND OTHER GOVERNMENT ENTITIES AND
+COMMUNITY PARTNERS, PROVIDE INFORMATION TO SCHOOL DISTRICTS AND
+SCHOOLS CONCERNING EMERGENCY PREPAREDNESS.
+SECTION 5. 24-37.5-105 (3) (h) and (3) (i), Colorado Revised
+Statutes, are amended, and the said 24-37.5-105 (3) is further amended BY
+THE ADDITION OF A NEW PARAGRAPH, to read:
+24-37.5-105. Office - responsibilities - rules - repeal. (3) The
+office shall:
+(h) Oversee and supervise the maintenance of information
+technology and the initiation of any information technology updates or
+projects for state agencies; and
+(i) Initiate all procurements of information technology resources for
+state agencies and enter into any agreement or contract in connection with
+such a procurement on behalf of a state agency; AND
+(j) PROVIDE INFORMATION AND EXPERTISE, TO THE EXTENT POSSIBLE,
+REGARDING INTEROPERABLE AND EMERGENCY COMMUNICATIONS PLANNING,
+TECHNOLOGY, TRAINING, AND FUNDING OPPORTUNITIES TO STATE,
+REGIONAL, TRIBAL, AND LOCAL AGENCIES AND EMERGENCY PERSONNEL AND
+ALL OTHER STAKEHOLDERS, INCLUDING BUT NOT LIMITED TO PUBLIC,
+PRIVATE AND NONGOVERNMENTAL ORGANIZATIONS.
+
+SECTION 6. 24-33.5-1803 (3), Colorado Revised Statutes, is
+amended BY THE ADDITION OF A NEW PARAGRAPH to read:
+24-33.5-1803. School safety resource center - created - duties.
+(3) The center has the following duties:
+(g) TO PROVIDE INFORMATION AND RESOURCES RELATING TO SCHOOL
+SAFETY, SCHOOL EMERGENCY RESPONSE PLANNING AND TRAINING, AND
+INTEROPERABLE COMMUNICATIONS IN SCHOOLS, AS DETERMINED BY THE
+CENTER, TO THE DIVISION OF FIRE SAFETY IN THE DEPARTMENT OF PUBLIC
+SAFETY TO BE DISTRIBUTED TO SCHOOL DISTRICTS AND SCHOOLS PURSUANT
+TO SECTION 24-33.5-1213.4.
